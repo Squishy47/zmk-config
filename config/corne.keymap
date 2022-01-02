@@ -61,7 +61,7 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp RGB_TOG &kp RGB_BRI &kp RGB_BRD &kp &trans &trans &trans &trans &trans &trans &trans &trans 
+   &kp RGB_TOG &kp RGB_BRI &kp RGB_BRD &trans &trans &trans &trans &trans &trans &trans &trans &trans 
    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                             &trans &trans &trans &trans &trans &trans
