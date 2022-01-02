@@ -56,10 +56,10 @@
 
                control_layer {
                         bindings = <
-   &kp RGB_TOG &kp RGB_BRI &kp RGB_BRD &kp &none &none &none &none &none &none &none &none 
-   &none &none &none &none &none &none &none &none &none &none &none &none
-   &none &none &none &none &none &none &none &none &none &none &none &none
-                        &none &none &none &none &none &none
+   &kp RGB_TOG &kp RGB_BRI &kp RGB_BRD &kp &trans &trans &trans &trans &trans &trans &trans &trans 
+   &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                        &trans &trans &trans &trans &trans &trans
                         >;
                };
         };
