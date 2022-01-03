@@ -47,10 +47,10 @@
 // | SHFT |ledon|     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp ESC   &kp EXCL        &kp AT            &kp HASH          &kp DLLR         &kp PRCNT &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &kp C_MUTE      &kp C_VOLUME_DOWN &kp C_VOLUME_UP   &kp C_PLAY_PAUSE &trans    &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &rgb_ug RGB_TOG &rgb_ug RGB_EFF   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD  &trans    &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	        &kp LGUI          &trans            &kp SPACE                  &kp RET   &trans    &kp RALT
+   &kp  ESC  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
+   &kp LCTRL &kp C_MUTE   &kp C_VOLUME_DOWN &kp C_VOLUME_UP   &kp C_PLAY_PAUSE   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+   &kp LSHFT &rgb_ug RGB_TOG   &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &rgb_ug RGB_COLOR_HSB(128,100,100)   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
+                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
                         >;
                 };
         };
@@ -68,7 +68,7 @@
 &spi1 {
    compatible = "nordic,nrf-spim";
    status = "okay";
-   mosi-pin = <6>;
+   mosi-pin = <1>;
    // Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
    sck-pin = <5>;
    miso-pin = <7>;
@@ -82,12 +82,22 @@
       spi-max-frequency = <4000000>;
 
       /* WS2812 */
-      chain-length = <54>; /* arbitrary; change at will */
+      chain-length = <11>; /* arbitrary; change at will */
       spi-one-frame = <0x70>;
       spi-zero-frame = <0x40>;
    };
 };
 
-/ chosen {
-   zmk,underglow = &led_strip;
+/ {
+   chosen {
+      zmk,underglow = &led_strip;
+   };
 };
+
+/*
+ * Temporarily here because nice nano v2 spi is not defined on ZMk YET
+ */
+
+
+
+
