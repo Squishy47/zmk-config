@@ -13,7 +13,6 @@
 
 #define THIRD 3
 
-#&led_strip { chain-length = <27>; };
 
 / {
         keymap {
